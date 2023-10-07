@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); 
+
+.ww-purple {
+    color: #64025F 
+}
+
+.ww-background-purple {
+    background-color: #64025F
+}
+
+.ww-border-purple {
+    border: 1px solid #64025F
+}
+
+.inter-font {
+    font-family: Inter
+}
+
