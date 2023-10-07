@@ -34,9 +34,9 @@ export default function Home() {
             A subheading that addresses the what, the why we should care and
             hopefully some social proof.
           </div>
-          <div>
-            <div className="ww-background-purple rounded text-white">Join a group</div>
-            <div>Learn more</div>
+          <div className="flex py-4">
+            <div className="hidden sm:inline-block text-base ww-background-purple rounded text-white  px-4 cursor-pointer mr-8">Join a group</div>
+            <div className="hidden sm:inline-block text-base ww-border-purple rounded ww-purple px-4 cursor-pointer">Learn more</div>
           </div>
         </div>
         <div className="m-8 w-1/4">
@@ -45,12 +45,12 @@ export default function Home() {
       </div>
 
       {/* Events Near */}
-      <div>
-        <div>
-          <div>Events Near</div>
-          <div>Pheonix, AZ</div>
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-row ">
+          <div className="text-lg text-left font-bold mr-6">Events Near</div>
+          <div className="text-sm rounded px-4 cursor-pointer text-white bg-blue-700">Pheonix, AZ</div>
         </div>
-        <div>See all events</div>
+        <div className="text-blue-700 text-sm cursor-pointer">See all events</div>
       </div>
       <div className="flex flex-wrap justify-center">
         {firstEightNearEvents.map((event) => (
