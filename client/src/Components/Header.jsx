@@ -3,13 +3,13 @@ import '../CSS/header.css';
 
 export default function Header() {
   return (
-    <header className="w-full flex flex-col sm:flex-row justify-between items-center px-10 pt-6 pb-7 bg-white-800 shadow-md">
+    <header className="w-full flex flex-col sm:flex-row justify-between items-center px-2 sm:px-10 py-6 bg-white-800 shadow-md">
       {/* Left Content */}
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-2 sm:gap-10">
         <img
           src="/src/assets/img/image 5.png"
           alt="Logo"
-          className="w-12 sm:w-32 mr-4 cursor-pointer"
+          className="w-13 sm:w-32 mr-4 cursor-pointer"
         />
 
         <form action="">
