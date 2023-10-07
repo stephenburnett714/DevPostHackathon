@@ -1,7 +1,92 @@
-import React from 'react'
+import React from "react";
+import Phone from "../assets/Images/HandsPhone.png";
+import { NearEventsData } from "../assets/data/events";
+import "../CSS/home.css"
 
 export default function Home() {
+  const firstEightNearEvents = NearEventsData.events.slice(0, 8);
+  const firstFourOnlineEvents = NearEventsData.events.slice(0, 4);
+
+  function formatDate(dateStr) {
+    const date = new Date(dateStr);
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+    const dayName = days[date.getDay()];
+    const monthName = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+  
+    return `${dayName}, ${monthName} ${day} ${year}`;
+  }
+
+
   return (
-    <div className='text-black'>Home</div>
-  )
+    <>
+      {/* Intro */}
+      <div className="flex flex-col sm:flex-row pt-8 lg:pt-12 justify-between">
+        <div className="w-2/4">
+          <div className="text-gray-500 inter-font text-sm text-left">Join a sisterhood</div>
+          <div className="text-4xl text-left font-bold ">
+            <span>A platform for women looking to</span><span className="ww-purple"> connect and make friends IRL</span>
+          </div>
+          <div className="text-base text-gray-500 inter-font text-left">
+            A subheading that addresses the what, the why we should care and
+            hopefully some social proof.
+          </div>
+          <div>
+            <div className="ww-background-purple rounded text-white">Join a group</div>
+            <div>Learn more</div>
+          </div>
+        </div>
+        <div className="m-8 w-1/4">
+          <img src={Phone} alt="family" />
+        </div>
+      </div>
+
+      {/* Events Near */}
+      <div>
+        <div>
+          <div>Events Near</div>
+          <div>Pheonix, AZ</div>
+        </div>
+        <div>See all events</div>
+      </div>
+      <div className="flex flex-wrap justify-center">
+        {firstEightNearEvents.map((event) => (
+          <div key={event.name} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 ">
+            <div>
+              <img src={event.image} alt={event.name} />
+              <div>{formatDate(event.date)}</div>
+              <h3>{event.name}</h3>
+              <p>Time: {event.time}</p>
+              <p>Attendees: {event.attendees}</p>
+              <p>Price: {event.ticketPrice}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Upcoming online events */}
+
+      <div>
+        <div>Upcoming online events</div>
+        <div>See all events</div>
+      </div>
+      <div className="flex flex-wrap justify-center">
+        {firstFourOnlineEvents.map((event) => (
+          <div key={event.name} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+            <div>
+              <img src={event.image} alt={event.name} />
+              <div>{formatDate(event.date)}</div>
+              <h3>{event.name}</h3>
+              <p>Time: {event.time}</p>
+              <p>Attendees: {event.attendees}</p>
+              <p>Price: {event.ticketPrice}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
