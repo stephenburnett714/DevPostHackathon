@@ -2,6 +2,8 @@ import React from "react";
 import Phone from "../assets/Images/HandsPhone.png";
 import { NearEventsData } from "../assets/data/events";
 import "../CSS/home.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faCalendarAlt, faCheck, faCoffee, faPencil, faTicket } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const firstEightNearEvents = NearEventsData.events.slice(0, 8);
@@ -48,20 +50,23 @@ export default function Home() {
       <div className="flex flex-row justify-between">
         <div className="flex flex-row ">
           <div className="text-lg text-left font-bold mr-6">Events Near</div>
-          <div className="text-sm rounded px-4 cursor-pointer text-white bg-blue-700">Pheonix, AZ</div>
+          <div className="text-sm rounded px-4 cursor-pointer text-white bg-blue-700">Pheonix, AZ  <FontAwesomeIcon icon={faPencil} /></div>
         </div>
         <div className="text-blue-700 text-sm cursor-pointer">See all events</div>
       </div>
       <div className="flex flex-wrap justify-center">
         {firstEightNearEvents.map((event) => (
-          <div key={event.name} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 ">
+          <div key={event.name} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 p-4 ">
             <div>
               <img src={event.image} alt={event.name} />
-              <div>{formatDate(event.date)}</div>
-              <h3>{event.name}</h3>
-              <p>Time: {event.time}</p>
-              <p>Attendees: {event.attendees}</p>
-              <p>Price: {event.ticketPrice}</p>
+              <div className="text-base text-left font-semibold">{event.title}</div>
+              <div className="text-sm text-left">{formatDate(event.date)}</div>
+              <div className="text-xs text-left"><FontAwesomeIcon icon={faCalendarAlt} /> Time: {event.time}</div>
+              <div className="flex text-left">
+                <div className="pr-4 text-xs font-semibold"><FontAwesomeIcon icon={faCheck} /> {event.attendees} going</div>
+                <div className="text-xs font-semibold"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
+              </div>
+              
             </div>
           </div>
         ))}
@@ -75,14 +80,17 @@ export default function Home() {
       </div>
       <div className="flex flex-wrap justify-center">
         {firstFourOnlineEvents.map((event) => (
-          <div key={event.name} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <div key={event.name} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 p-4 ">
             <div>
               <img src={event.image} alt={event.name} />
-              <div>{formatDate(event.date)}</div>
-              <h3>{event.name}</h3>
-              <p>Time: {event.time}</p>
-              <p>Attendees: {event.attendees}</p>
-              <p>Price: {event.ticketPrice}</p>
+              <div className="text-base text-left font-semibold">{event.title}</div>
+              <div className="text-sm text-left">{formatDate(event.date)}</div>
+              <div className="text-xs text-left"><FontAwesomeIcon size="1x" icon={faCalendarAlt} /> Time: {event.time}</div>
+              <div className="flex text-left">
+                <div className="pr-4 text-xs font-semibold"><FontAwesomeIcon icon={faCheck} /> {event.attendees} going</div>
+                <div className="text-xs font-semibold"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
+              </div>
+              
             </div>
           </div>
         ))}
