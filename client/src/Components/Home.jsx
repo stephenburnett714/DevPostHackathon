@@ -3,7 +3,7 @@ import Phone from "../assets/Images/HandsPhone.png";
 import { NearEventsData } from "../assets/data/events";
 import "../CSS/home.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar, faCalendarAlt, faCheck, faCoffee, faPencil, faTicket } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faCalendarAlt, faCheck, faCircleCheck, faCoffee, faPencil, faTicket } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const firstEightNearEvents = NearEventsData.events.slice(0, 8);
@@ -24,12 +24,12 @@ export default function Home() {
 
 
   return (
-    <>
+    <div className="mx-8">
       {/* Intro */}
       <div className="flex flex-col sm:flex-row pt-8 lg:pt-12 justify-between">
-        <div className="w-2/4">
+        <div className="sm:w-2/4">
           <div className="text-gray-500 inter-font text-sm text-left">Join a sisterhood</div>
-          <div className="text-4xl text-left font-bold ">
+          <div className="md:only:text-4xl text-left font-bold ">
             <span>A platform for women looking to</span><span className="ww-purple"> connect and make friends IRL</span>
           </div>
           <div className="text-base text-gray-500 inter-font text-left">
@@ -37,11 +37,11 @@ export default function Home() {
             hopefully some social proof.
           </div>
           <div className="flex py-4">
-            <div className="hidden sm:inline-block text-base ww-background-purple rounded text-white  px-4 cursor-pointer mr-8">Join a group</div>
-            <div className="hidden sm:inline-block text-base ww-border-purple rounded ww-purple px-4 cursor-pointer">Learn more</div>
+            <div className="hidden sm:inline-block text-base ww-background-purple rounded text-white  px-4 cursor-pointer mr-8 inter-font">Join a group</div>
+            <div className="hidden sm:inline-block text-base ww-border-purple rounded ww-purple px-4 cursor-pointer inter-font">Learn more</div>
           </div>
         </div>
-        <div className="m-8 w-1/4">
+        <div className="m-8 w-1/4 self-center picture-min">
           <img src={Phone} alt="family" />
         </div>
       </div>
@@ -49,24 +49,25 @@ export default function Home() {
       {/* Events Near */}
       <div className="flex flex-row justify-between">
         <div className="flex flex-row ">
-          <div className="text-lg text-left font-bold mr-6">Events Near</div>
-          <div className="text-sm rounded px-4 cursor-pointer text-white bg-blue-700">Pheonix, AZ  <FontAwesomeIcon icon={faPencil} /></div>
+          <div className="text-lg text-left font-bold sm:mr-6 inter-font">Events Near</div>
+          <div className="text-xs rounded px-4 py-1 cursor-pointer text-white bg-blue-700 inter-font self-center">Pheonix, AZ <FontAwesomeIcon icon={faPencil} /></div>
         </div>
-        <div className="text-blue-700 text-sm cursor-pointer">See all events</div>
+        <div className="text-blue-700 text-xs cursor-pointer self-end inter-font hidden sm:block ">See all events</div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center items-stretch">
         {firstEightNearEvents.map((event) => (
-          <div key={event.name} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 p-4 ">
+          <div key={event.name} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 p-4">
             <div>
               <img src={event.image} alt={event.name} />
-              <div className="text-base text-left font-semibold">{event.title}</div>
-              <div className="text-sm text-left">{formatDate(event.date)}</div>
-              <div className="text-xs text-left"><FontAwesomeIcon icon={faCalendarAlt} /> Time: {event.time}</div>
+              <div className="text-base text-left font-semibold inter-font">{event.title}</div>
+              <div className="items-end">
+              <div className="text-sm text-left inter-font">{formatDate(event.date)}</div>
+              <div className="text-xs text-left inter-font"><FontAwesomeIcon icon={faCalendarAlt} /> Time: {event.time}</div>
               <div className="flex text-left">
-                <div className="pr-4 text-xs font-semibold"><FontAwesomeIcon icon={faCheck} /> {event.attendees} going</div>
-                <div className="text-xs font-semibold"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
+                <div className="pr-4 text-xs font-semibold inter-font"><FontAwesomeIcon icon={faCircleCheck} color="#64025F" /> {event.attendees} going</div>
+                <div className="text-xs font-semibold inter-font"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
               </div>
-              
+              </div>
             </div>
           </div>
         ))}
@@ -74,27 +75,28 @@ export default function Home() {
 
       {/* Upcoming online events */}
 
-      <div>
-        <div>Upcoming online events</div>
-        <div>See all events</div>
+      <div className="flex flex-row justify-between">
+        <div className="text-lg text-left font-bold mr-6 inter-font">Upcoming online events</div>
+        <div className="text-blue-700 text-xs cursor-pointer self-end inter-font">See all events</div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center items-stretch">
         {firstFourOnlineEvents.map((event) => (
           <div key={event.name} className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5 p-4 ">
             <div>
               <img src={event.image} alt={event.name} />
-              <div className="text-base text-left font-semibold">{event.title}</div>
-              <div className="text-sm text-left">{formatDate(event.date)}</div>
-              <div className="text-xs text-left"><FontAwesomeIcon size="1x" icon={faCalendarAlt} /> Time: {event.time}</div>
+              <div className="text-base text-left font-semibold inter-font">{event.title}</div>
+              <div className="items-end">
+              <div className="text-sm text-left inter-font">{formatDate(event.date)}</div>
+              <div className="text-xs text-left inter-font"><FontAwesomeIcon size="1x" icon={faCalendarAlt} /> Time: {event.time}</div>
               <div className="flex text-left">
-                <div className="pr-4 text-xs font-semibold"><FontAwesomeIcon icon={faCheck} /> {event.attendees} going</div>
-                <div className="text-xs font-semibold"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
+                <div className="pr-4 text-xs font-semibold inter-font"><FontAwesomeIcon icon={faCircleCheck} color="#64025F" /> {event.attendees} going</div>
+                <div className="text-xs font-semibold inter-font"><FontAwesomeIcon icon={faTicket} /> {event.ticketPrice}</div>
               </div>
-              
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
