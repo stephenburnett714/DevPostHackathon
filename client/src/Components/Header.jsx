@@ -9,7 +9,7 @@ export default function Header() {
         <img
           src="/src/assets/img/image 5.png"
           alt="Logo"
-          className="w-10 sm:w-32 mr-4 cursor-pointer"
+          className="w-12 sm:w-32 mr-4 cursor-pointer"
         />
 
         <form action="">
