@@ -10,7 +10,7 @@ import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/fre
 export default function Footer() {
   const logoUrl = 'https://www.figma.com/adf4b452-dd4b-43e9-8e63-f3b49b25425e'
   return (
-    <div className=' bg-slate-200 m-0 py-[48px] fixed bottom-0 w-full h-[auto] flex flex-col justify-center items-center'>
+    <div className=' bg-slate-200 m-0 py-[48px] bottom-0 w-full h-[auto] flex flex-col justify-center items-center'>
       <div id="logo" className='pt-3 pb-[24px]'>
         <img src={footerLogo} className='scale-75' />
       </div>
