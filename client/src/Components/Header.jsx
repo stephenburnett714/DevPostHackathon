@@ -3,13 +3,13 @@ import '../CSS/header.css';
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-between items-center px-10 pt-6 pb-7 bg-white-800 shadow-md">
+    <header className="w-full flex flex-col sm:flex-row justify-between items-center px-10 pt-6 pb-7 bg-white-800 shadow-md">
       {/* Left Content */}
       <div className="flex items-center gap-10">
         <img
           src="/src/assets/img/image 5.png"
           alt="Logo"
-          className="mr-4 cursor-pointer"
+          className="w-12 sm:w-32 mr-4 cursor-pointer"
         />
 
         <form action="">
@@ -22,8 +22,8 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search events"
-              className="inter-font pl-10 py-2 border rounded-md focus:outline-none  flex flex-col items-start"
-              style={{ width: '350px' }}
+              className="inter-font pl-10 py-2 border rounded-md focus:outline-none flex-shrink-0 w-full sm:max-w-md"
+              style={{ maxWidth: '350px', width: '100%' }}
             />
           </div>
         </form>
