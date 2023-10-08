@@ -16,3 +16,7 @@
     font-family: Inter
 }
 
+.picture-min {
+    min-width: 150px;
+}
+
