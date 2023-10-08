@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.inter-font {
+  font-family: Inter;
+}
+
+.ww-blue-bg {
+  background-color: #1d4ed8;
+}
+
+.ww-gray {
+  color: #374151;
+}
+
+.border-gray-400 {
+  border-color: #cbd5e0;
+}
