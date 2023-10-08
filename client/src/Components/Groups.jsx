@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { AllGroups } from '../assets/data/groups';
+import { AllGroups } from '../assets/data/groupsevents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faMap, faUser } from '@fortawesome/free-solid-svg-icons';
 
