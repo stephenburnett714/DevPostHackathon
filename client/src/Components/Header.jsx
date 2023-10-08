@@ -32,7 +32,9 @@ export default function Header() {
       <div className="flex items-center">
         <ul className="flex items-center space-x-5">
           <li>
-            <a className="inter-font ww-purple font-normal">Login</a>
+            <a className="inter-font ww-purple font-normal cursor-pointer">
+              Login
+            </a>
           </li>
           <li>
             <button className="inter-font ww-purple-bg text-white px-4 py-2 rounded-md">
