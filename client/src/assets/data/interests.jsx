@@ -1,0 +1,16 @@
+export default interestsData = [
+  'Adventure and Exploration',
+  'Outdoor Adventures',
+  'Fitness Enthusiasts',
+  'Healthy Cooking and Recipes',
+  'Outdoor Adventure',
+  'DIY and Crafts',
+  'Beauty and Skincare',
+  'Fashion and Style',
+  'Travel Enthusiasts',
+  'Foodies and Culinary Adventures',
+  'Home Gardening and Decor',
+  'Photography and Memory Keeping',
+  'Book Lovers and Reading Enthusiasts',
+  'Movie Buffs and Cinema Nights',
+];

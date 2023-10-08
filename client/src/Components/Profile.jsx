@@ -1,6 +1,7 @@
 import React from 'react';
 import '../CSS/profile.css';
 import { groupsData } from '../assets/data/groups';
+import { interestData } from '../assets/data/interests';
 import { useMediaQuery } from 'react-responsive';
 
 export default function Profile() {
@@ -121,10 +122,22 @@ export default function Profile() {
         </div>
       </div>
 
-      {/*Profile Interests*/}
-      <div class="Interests" className="inter-font">
-        This will be interests part
-      </div>
+      {/*Profile Interests
+      <div class="Interests" className="inter-font pt-20 px-10 lg:px-40">
+        <span className="text-4xl font-extrabold leading-10 tracking-tight ">
+          Interests
+        </span>
+        <div className="">
+          {interestData.map((interest, index) => (
+            <span key={index}>{interest}</span>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <button className="text-sm border border-gray-400 rounded-lg px-2 py-1">
+            See more interests
+          </button>
+        </div>
+      </div>*/}
     </div>
   );
 }
