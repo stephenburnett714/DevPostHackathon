@@ -7,7 +7,7 @@ export default function Header() {
       {/* Left Content */}
       <div className="flex items-center gap-2 sm:gap-10">
         <img
-          src="/src/assets/img/image 5.png"
+          src="/src/assets/img/Logo_block.png"
           alt="Logo"
           className="w-13 sm:w-32 mr-4 cursor-pointer"
         />
@@ -22,7 +22,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search events"
-              className="inter-font pl-10 py-2 border rounded-md focus:outline-none flex-shrink-0 w-full sm:max-w-md"
+              className="inter-font pl-10 py-1 border rounded-md focus:outline-none focus:border-gray-500 flex-shrink-0 w-full sm:max-w-md"
               style={{ maxWidth: '350px', width: '100%' }}
             />
           </div>
