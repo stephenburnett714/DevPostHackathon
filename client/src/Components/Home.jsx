@@ -9,10 +9,24 @@ import {
   faPencil,
   faTicket,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const firstEightNearEvents = NearEventsData.events.slice(0, 8);
   const firstFourOnlineEvents = NearEventsData.events.slice(0, 4);
+  const navigate = useNavigate()
+
+  function eventsPageLink() {
+    navigate('/events');
+  }
+
+  function eventsPageLink() {
+    navigate('/events');
+  }
+
+  function groupPageLink() {
+    navigate('/groups');
+  }
 
   function formatDate(dateStr) {
     const date = new Date(dateStr);
@@ -57,7 +71,7 @@ export default function Home() {
             hopefully some social proof.
           </div>
           <div className="flex py-4">
-            <div className="hidden sm:inline-block text-base ww-background-purple rounded text-white  px-4 cursor-pointer mr-8 inter-font">
+            <div onClick={groupPageLink} className="hidden sm:inline-block text-base ww-background-purple rounded text-white  px-4 cursor-pointer mr-8 inter-font">
               Join a group
             </div>
             <div className="hidden sm:inline-block text-base ww-border-purple rounded ww-purple px-4 cursor-pointer inter-font">
@@ -71,20 +85,20 @@ export default function Home() {
       </div>
 
       {/* Events Near */}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between py-4">
         <div className="flex flex-col sm:flex-row sm:justify-between">
           <div className="text-lg text-left font-bold sm:mr-6 inter-font">
             Events Near
           </div>
-          <div className="text-[8px] rounded px-4 py-1 cursor-pointer text-white bg-blue-700 inter-font self-center">
+          <div className="text-[8px] rounded px-4 py-1 cursor-pointer text-white ww-background-purple inter-font self-center">
             Pheonix, AZ <FontAwesomeIcon icon={faPencil} />
           </div>
         </div>
-        <div className="text-blue-700 text-xs cursor-pointer self-end inter-font hidden sm:block ">
+        <div className="ww-purple text-xs cursor-pointer self-end inter-font hidden sm:block " onClick={eventsPageLink}>
           See all events
         </div>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap">
         {firstEightNearEvents.map((event) => (
           <div
             key={event.name}
@@ -123,11 +137,11 @@ export default function Home() {
         <div className="text-lg text-left font-bold mr-6 inter-font">
           Upcoming online events
         </div>
-        <div className="text-blue-700 text-xs cursor-pointer self-end inter-font">
+        <div className="ww-purple text-xs cursor-pointer self-end inter-font" onClick={eventsPageLink}>
           See all events
         </div>
       </div>
-      <div className="flex flex-wrap justify-center items-stretch">
+      <div className="flex flex-wrap items-stretch">
         {firstFourOnlineEvents.map((event) => (
                  <div
                  key={event.name}

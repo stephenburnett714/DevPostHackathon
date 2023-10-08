@@ -1,7 +1,13 @@
 import React from 'react';
 import '../CSS/header.css';
+import { useNavigate } from 'react-router';
 
 export default function Header() {
+ const navigate = useNavigate()
+
+  function loginNavigate() {
+    navigate('/login');
+  }
   return (
     <header className="w-full flex flex-col sm:flex-row justify-between items-center px-2 sm:px-10 py-6 bg-white-800 shadow-md">
       {/* Left Content */}
@@ -32,9 +38,7 @@ export default function Header() {
       <div className="flex items-center">
         <ul className="flex items-center space-x-5">
           <li>
-            <a className="inter-font ww-purple font-normal cursor-pointer">
-              Login
-            </a>
+            <a onClick={loginNavigate} className="inter-font ww-purple font-normal">Login</a>
           </li>
           <li>
             <button className="inter-font ww-purple-bg text-white px-4 py-2 rounded-md">
