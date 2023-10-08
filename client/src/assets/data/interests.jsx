@@ -1,4 +1,4 @@
-export default interestsData = [
+export const interestData = [
   'Adventure and Exploration',
   'Outdoor Adventures',
   'Fitness Enthusiasts',

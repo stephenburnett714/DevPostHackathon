@@ -122,14 +122,19 @@ export default function Profile() {
         </div>
       </div>
 
-      {/*Profile Interests
+      {/*Profile Interests*/}
       <div class="Interests" className="inter-font pt-20 px-10 lg:px-40">
-        <span className="text-4xl font-extrabold leading-10 tracking-tight ">
+        <span className="text-4xl font-extrabold leading-10 tracking-tight">
           Interests
         </span>
-        <div className="">
+        <div className="py-10 flex flex-wrap items-start content-start gap-2">
           {interestData.map((interest, index) => (
-            <span key={index}>{interest}</span>
+            <span
+              key={index}
+              className="ww-blue-bg px-2 py-1 border rounded-full text-white text-xs"
+            >
+              {interest}
+            </span>
           ))}
         </div>
         <div className="flex justify-center">
@@ -137,7 +142,7 @@ export default function Profile() {
             See more interests
           </button>
         </div>
-      </div>*/}
+      </div>
     </div>
   );
 }
