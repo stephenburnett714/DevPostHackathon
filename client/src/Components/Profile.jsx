@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS/profile.css';
-import { groupsData } from '../assets/data/groups';
+import { groupsData } from '../assets/data/groupsdata';
 import { interestData } from '../assets/data/interests';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate } from 'react-router';

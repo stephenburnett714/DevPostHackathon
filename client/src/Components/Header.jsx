@@ -72,7 +72,8 @@ export default function Header() {
           </div>
         </div>
       ) : (
-        <div className="flex items-center">
+        <div className="flex items-center pt-4 sm:pt-0">
+
           <ul className="flex items-center space-x-5">
             <li>
               <a
