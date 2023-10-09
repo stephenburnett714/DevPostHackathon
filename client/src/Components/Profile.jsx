@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../CSS/profile.css';
-import { groupsData } from '../assets/data/groups';
+import { groupsData } from '../assets/data/groupsdata';
 import { interestData } from '../assets/data/interests';
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function Profile() {
+  const navigate = useNavigate();
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleButtonId = () => {
+    setModalOpen(true);
+  };
+
+  function navigateGroups() {
+    navigate('/groups');
+  }
+
+  function navigateEvents() {
+    navigate('/events');
+  }
+
   const userData = {
     profilePicture: 'src/assets/img/Frame 51.png',
     profileName: 'Samantha Miller',
@@ -84,12 +103,36 @@ export default function Profile() {
             src="src/assets/img/signin 1.svg"
             alt="Signin ID"
             className="order-2 sm:order-1"
+            onClick={handleButtonId}
           />
           <button className="ww-gray order-1 sm:order-2 border border-gray-400 font-semibold px-5 py-2  rounded-md">
             Edit Profile
           </button>
         </div>
       </div>
+
+      {/*Modal is open */}
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-opacity-50 bg-black backdrop-blur-md">
+          <div className="flex flex-col justify-center items-center bg-white p-20 rounded-md shadow-lg">
+            <img src="src/assets/img/id_me.svg" className="w-24 h-24" />
+            <FontAwesomeIcon
+              icon={faCheckCircle}
+              style={{ color: '#1bde17' }}
+              className="pb-4"
+            />
+            <span className="inter-font text-lg font-bold pb-10">
+              You are now connected with you ID.me account!
+            </span>
+            <button
+              onClick={() => setModalOpen(false)}
+              className="inter-font border rounded-lg border-gray-400 px-2 py-1 "
+            >
+              Return to your profile
+            </button>
+          </div>
+        </div>
+      )}
 
       {/*Profile Groups*/}
       <div class="Groups" className="inter-font pt-10 lg:pt-32 px-10 lg:px-40">
@@ -116,7 +159,10 @@ export default function Profile() {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="text-sm border border-gray-400 rounded-lg px-2 py-1">
+          <button
+            className="text-sm border border-gray-400 rounded-lg px-2 py-1"
+            onClick={navigateGroups}
+          >
             See more groups
           </button>
         </div>
@@ -138,7 +184,10 @@ export default function Profile() {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="text-sm border border-gray-400 rounded-lg px-2 py-1">
+          <button
+            className="text-sm border border-gray-400 rounded-lg px-2 py-1"
+            onClick={navigateEvents}
+          >
             See more interests
           </button>
         </div>
